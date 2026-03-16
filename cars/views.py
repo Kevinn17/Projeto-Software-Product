@@ -12,10 +12,10 @@ class CarsListView(ListView):
     context_object_name = 'cars'  
 
     def get_queryset(self):
-        cars = super().get_queryset().order_by('model')
+        cars = super().get_queryset().order_by('modelo')
         search = self.request.GET.get('search')
         if search:
-            cars = cars.filter(model_icontains=search)
+            cars = cars.filter(modelo_icontains=search)
         return cars     
       
 

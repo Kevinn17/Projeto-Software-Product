@@ -1,5 +1,5 @@
 from django import forms 
-from cars.models import Brand, Car
+from cars.models import Marca, Car
 
 
 class CarModelForm(forms.ModelForm):
@@ -7,14 +7,14 @@ class CarModelForm(forms.ModelForm):
         model = Car
         fields = '__all__'
 
-    def clean_value(self):
-        value = self.cleaned_data.get('value')
-        if value < 20000:
-            self.add_error('value','Valor mínimo permitido: R$20.000')
-        return value 
+    def clean_valor(self):
+        valor = self.cleaned_data.get('valor')
+        if valor < 20000:
+            self.add_error('valor','Valor mínimo permitido: R$20.000')
+        return valor 
     
-    def clean_factory_year(self):
-        factory_year = self.cleaned_data.get('factory_year')
-        if factory_year < 2000:
-            self.add_error('factory_year', 'Ano mínimo permitido: 2000')
-        return factory_year
+    def clean_fabricado_em(self):
+        fabricado_em = self.cleaned_data.get('fabricado_em')
+        if fabricado_em < 2000:
+            self.add_error('fabricado_em', 'Ano mínimo permitido: 2000')
+        return fabricado_em

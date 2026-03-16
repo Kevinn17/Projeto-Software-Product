@@ -1,13 +1,13 @@
 from django.contrib import admin
-from cars.models import Car, Brand
+from cars.models import Car, Marca
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('model', 'brand', 'factory_year', 'model_year', 'value')
-    search_fields = ('model','brand')
+    list_display = ('modelo', 'marca', 'fabricado_em', 'ano_modelo', 'valor')
+    search_fields = ('modelo','marca')
 
 class BranAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
 
 admin.site.register(Car, CarAdmin)
-admin.site.register(Brand, BranAdmin)
+admin.site.register(Marca, BranAdmin)
