@@ -17,7 +17,7 @@
     }
 
     header {
-        background-color: #0096c7;
+        background-color: #23047e;
         color: #fff;
         text-align: center;
     }
@@ -30,7 +30,7 @@
     }
 
     nav {
-        background-color: #0096c7;
+        background-color: #08242e;
         color: #fff;
         height: 50px;
         display: flex;
@@ -60,7 +60,7 @@
     }
 
     nav ul li a:hover {
-        background-color: #32bbe8;
+        background-color: #b3b3b3;
     }
 
     nav ul li.active a {
@@ -87,6 +87,7 @@
         {% endif %}
 
         <li><a href="{% url 'cars_list' %}">Carros</a></li>
+        <li><a href="{% url 'criar_agendamento' %}">Agendamentos</a></li>
 
         {% if user.is_authenticated %}
           <li><a href="{% url 'logout' %}">Sair</a></li>
